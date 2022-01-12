@@ -1,6 +1,7 @@
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(221, 221, 221);
 }
-h1 {
-    text-align: center;
-}
+

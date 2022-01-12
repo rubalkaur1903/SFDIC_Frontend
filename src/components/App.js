@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import { Images } from '.';
 
 const App = () => {
@@ -10,5 +9,4 @@ const App = () => {
         </Routes>
     </BrowserRouter>
 }
-
 export default App;

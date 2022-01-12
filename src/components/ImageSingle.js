@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {Card, Typography, makeStyles, Button} from '@material-ui/core';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import Image from 'material-ui-image';
 import { FcLike } from "react-icons/fc";
 import { VscHeart } from "react-icons/vsc";
@@ -12,7 +13,15 @@ const useStyles = makeStyles({
     button:{
         marginTop: '2rem'
     }
-})
+});
+const theme = createTheme({
+    typography: {
+        fontFamily: [
+            'Open Sans'
+        ]
+    }
+});
+
 const ImageSingle = ({image}) => {
     const [like, setLike] = useState(false);
     const classes = useStyles();
@@ -25,8 +34,8 @@ const ImageSingle = ({image}) => {
         e.preventDefault();
         setLike(false);
     }
-
     return <>
+    <ThemeProvider theme={theme}>
         <Card className={classes.card}>
             <Image src={image.img_src} />
             <Typography>{image.rover.name} - {image.camera.full_name}</Typography>
@@ -39,6 +48,7 @@ const ImageSingle = ({image}) => {
                 }
             </Typography>
         </Card>
+    </ThemeProvider>
     </>
 }
 
